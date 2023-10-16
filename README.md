@@ -2,6 +2,12 @@
 
 This repository is the official implementation of "CAT-WALK: Inductive Hypergraph Learning via Set Walks". 
 
+## Authors
+[Ali Behrouz](https://abehrouz.github.io), [Farnoosh Hashemi](https://farnooshha.github.io), [Sadaf Sadeghian](https://www.linkedin.com/in/sadaf-sadeghian-53b8b4174/), [Margo Seltzer](https://www.seltzer.com/margo/)
+
+### Abstract
+Temporal hypergraphs provide a powerful paradigm for modeling time-dependent, higher-order interactions in complex systems. Representation learning for hypergraphs is essential for extracting patterns of the higher-order interactions that are critically important in real-world problems in social network analysis, neuroscience, finance, etc. However, existing methods are typically designed only for specific tasks or static hypergraphs. We present CAT-Walk, an inductive method that learns the underlying dynamic laws that govern the temporal and structural processes underlying a temporal hypergraph. CAT-Walk introduces a temporal, higher-order walk on hypergraphs, SetWalk, that extracts higher-order causal patterns. CAT-Walk uses a novel adaptive and permutation invariant pooling strategy, SetMixer, along with a set-based anonymization process that hides the identity of hyperedges. Finally, we present a simple yet effective neural network model to encode hyperedges. Our evaluation on 10 hypergraph benchmark datasets shows that CAT-Walk attains outstanding performance on temporal hyperedge prediction benchmarks in both inductive and transductive settings. It also shows competitive performance with state-of-the-art methods for node classification.
+
 ## Requirements
 * `python >= 3.7`, `PyTorch >= 1.4`, please refer to their official websites for installation details.
 * Other dependencies:
@@ -12,6 +18,9 @@ numpy==1.16.4
 scikit_learn==0.22.1
 numba==0.51.2
 ```
+
+## Dataset
+We use 10 publicly available datasets that can be found [here](https://www.cs.cornell.edu/~arb/data/). To use them please put the data under `HG_Data` floder.
 
 ### Usage Summary
 ```txt
@@ -85,4 +94,19 @@ optional arguments:
                         verbosity of the program output
   --partial_e_num PARTIAL_E_NUM
                         number of hyperedges to load from the dataset(when loading the dataset partially)
+```
+
+## Acknowledgement
+We have utilized the code from [here](https://github.com/snap-stanford/CAW) as the foundation of our implementation, customizing it extensively to align with our specific needs. Thanks to the authors for sharing their code.
+
+### Reference
+
+```@inproceedings{
+catwalk,
+title={CAT-Walk: Inductive Hypergraph Learning via Set Walks},
+author={Ali Behrouz, Farnoosh Hashemi, Sadaf Sadeghian, Margo Seltzer},
+booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
+year={2023},
+url={https://openreview.net/forum?id=QG4nJBNEar}
+}
 ```
